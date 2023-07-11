@@ -22,5 +22,10 @@ public class PlayerController : MonoBehaviour
 
         myAnimation.SetFloat("MoveX", player.velocity.x);
         myAnimation.SetFloat("MoveY", player.velocity.y);
+
+        if(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1){
+            myAnimation.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
+            myAnimation.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+        }
     }
 }
