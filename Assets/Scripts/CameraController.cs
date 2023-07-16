@@ -9,6 +9,11 @@ public class CameraController : MonoBehaviour
     public Vector2 minPosition;
     public Vector2 maxPosition;
 
+    public ColorBlindFilter filter;
+    void Start(){
+        filter = GetComponent<ColorBlindFilter>();
+    }
+
     void LateUpdate(){
 
         if (transform.position != target.position){
